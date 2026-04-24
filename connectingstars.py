@@ -60,7 +60,7 @@ def draw():
                ocolor = "Black"
             )
 
-    if next_star < number_of_stars:
+    if next_star == number_of_stars:
                 screen.draw.text(
                     "Constellation completed",
                     center = (WIDTH/2,50),
@@ -76,7 +76,7 @@ def on_mouse_down(pos):
                     if next_star < number_of_stars:
                         if stars[next_star].collidepoint(pos):
                             if next_star > 0:
-                                lines.append((stars[next_star-1],pos,stars[next_star.pos]))
+                                lines.append((stars[next_star-1].pos,stars[next_star].pos))
                             next_star += 1
 
 
